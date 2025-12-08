@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kiran M | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Kiran M - Final-year IT student skilled in Web Development, Data Analytics, Power BI, and Machine Learning." />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0f172a;
+      --card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.1);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
+      --shadow-chip: 0 8px 20px rgba(15, 23, 42, 0.8);
+      --transition-fast: 0.2s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout */
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.1rem 3rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.6), transparent);
+      border-bottom: 1px solid rgba(31, 41, 55, 0.65);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 0;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 20% 0, #38bdf8, #4f46e5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #e5e7eb;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+      font-size: 1.05rem;
+    }
+
+    .nav-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .nav-title h1 {
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .nav-title span {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.35rem 0.6rem;
+      border-radius: var(--radius-pill);
+      color: var(--muted);
+      position: relative;
+      transition: color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.9);
+      transform: translateY(-1px);
+    }
+
+    .nav-cta {
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.83rem;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), rgba(15, 23, 42, 0.9));
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9);
+    }
+
+    .nav-cta span {
+      font-size: 1.1rem;
+      transform: translateY(1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: none;
+      color: #e5e7eb;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 2.6rem;
+      padding-top: 2.2rem;
+      padding-bottom: 2.4rem;
+      align-items: center;
+    }
+
+    .hero-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-kicker::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--accent));
+      opacity: 0.8;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 4vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #38bdf8, #a855f7);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 36rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 0.78rem;
+      color: var(--muted);
+      box-shadow: var(--shadow-chip);
+    }
+
+    .chip-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0, #38bdf8, #22c55e);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      border-radius: var(--radius-pill);
+      padding: 0.6rem 1.35rem;
+      font-size: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.65);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: pointer;
+      background: none;
+      color: inherit;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.32), rgba(37, 99, 235, 0.9));
+      border-color: rgba(129, 140, 248, 0.9);
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 26px 55px rgba(37, 99, 235, 0.7);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(30, 64, 175, 0.7);
+      border-color: rgba(129, 140, 248, 0.9);
+    }
+
+    .btn-icon {
+      font-size: 1.1rem;
+      transform: translateY(1px);
+    }
+
+    .hero-contact {
+      margin-top: 0.8rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .hero-contact span {
+      color: #e5e7eb;
+    }
+
+    .hero-right {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.26), rgba(15, 23, 42, 0.96));
+      border-radius: 26px;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid rgba(37, 99, 235, 0.6);
+      box-shadow: var(--shadow-soft);
+      max-width: 320px;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.06), transparent 55%);
+      opacity: 0.75;
+      pointer-events: none;
+    }
+
+    .hero-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(96, 165, 250, 0.7);
+      font-size: 0.78rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 14px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr;
+      gap: 0.65rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .meta-item {
+      padding: 0.55rem 0.55rem;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.94);
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      font-size: 0.75rem;
+    }
+
+    .meta-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .meta-value {
+      font-size: 0.8rem;
+    }
+
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-pill {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.96);
+    }
+
+    .hero-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.72rem;
+      color: var(--muted);
+      border-top: 1px dashed rgba(30, 64, 175, 0.7);
+      padding-top: 0.55rem;
+      margin-top: 0.4rem;
+    }
+
+    .hero-footer span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    /* Sections */
+
+    section {
+      margin-bottom: 2.8rem;
+    }
+
+    .section-header {
+      margin-bottom: 1.3rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 5px;
+      height: 20px;
+      border-radius: 999px;
+      background: linear-gradient(to bottom, #38bdf8, #a855f7);
+    }
+
+    .section-subtitle {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.4), rgba(15, 23, 42, 0.96));
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.18), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .card-title {
+      font-size: 0.99rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .card-meta-line {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-body {
+      font-size: 0.85rem;
+      color: #cbd5f5;
+    }
+
+    .card-body ul {
+      list-style: none;
+      margin-top: 0.35rem;
+    }
+
+    .card-body li {
+      position: relative;
+      padding-left: 0.9rem;
+      margin-bottom: 0.25rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .card-body li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    /* Skills layout */
+
+    .skills-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .skill-group-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .skill-chip {
+      font-size: 0.78rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.96);
+      box-shadow: var(--shadow-chip);
+    }
+
+    .skill-note {
+      margin-top: 0.7rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* Timeline */
+
+    .timeline {
+      border-left: 1px dashed rgba(55, 65, 81, 0.9);
+      padding-left: 0.9rem;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 0.8rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -0.9rem;
+      top: 0.25rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #38bdf8;
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.9);
+    }
+
+    .timeline-title {
+      font-size: 0.9rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .timeline-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    /* Simple two-column grids for lists */
+
+    .cols-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.7rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* Contact */
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1rem;
+      background: linear-gradient(to right, rgba(15, 23, 42, 0.98), rgba(30, 64, 175, 0.88));
+      border-radius: 22px;
+      padding: 1.1rem 1.15rem;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-heading {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-text {
+      font-size: 0.85rem;
+      color: #cbd5f5;
+      margin-bottom: 0.65rem;
+    }
+
+    .contact-details {
+      font-size: 0.82rem;
+    }
+
+    .contact-details div {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+      align-items: center;
+    }
+
+    .contact-label {
+      width: 65px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .contact-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+    }
+
+    .contact-pill {
+      padding: 0.28rem 0.75rem;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.94);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 0.76rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .card-grid,
+      .skills-wrap,
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding: 0.7rem 0.9rem;
+        border-radius: 16px;
+        background: rgba(15, 23, 42, 0.98);
+        border: 1px solid rgba(55, 65, 81, 0.9);
+        box-shadow: var(--shadow-soft);
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 180px;
+        transform-origin: top right;
+        transform: scale(0.96);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity var(--transition-fast), transform var(--transition-fast);
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: scale(1);
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links-desktop {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-title {
+        font-size: 1.9rem;
+      }
+
+      .hero-card {
+        max-width: 100%;
+      }
+
+      .page {
+        padding-inline: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="page nav">
+      <div class="nav-left">
+        <div class="logo-circle">KM</div>
+        <div class="nav-title">
+          <h1>Kiran M</h1>
+          
+        </div>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">☰</button>
+
+      <nav class="nav-links nav-links-desktop" id="navLinksDesktop">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact" class="nav-cta">
+          <span>•</span> Contact
+        </a>
+      </nav>
+
+      <nav class="nav-links" id="navLinksMobile">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <div class="hero-kicker">Final-year B.Tech · Information Technology</div>
+        <h2 class="hero-title">
+          Building <span>web, data & ML</span> solutions that solve real problems.
+        </h2>
+        <p class="hero-subtitle">
+          I’m a final-year IT student with hands-on experience in
+          <strong>web development</strong>, <strong>data analytics with Power BI</strong>, and
+          <strong>machine learning</strong>. I enjoy turning ideas into practical applications — from
+          dashboards and automation to predictive models.
+        </p>
+
+        <div class="hero-tags">
+          <div class="chip">
+            <span class="chip-dot"></span>
+            Open to: Software · Web · Data roles
+          </div>
+          <div class="chip">
+            🌍 Erode, Tamil Nadu
+          </div>
+          <div class="chip">
+            🎓 B.Tech IT (2022–2026)
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            <span class="btn-icon">✉️</span>
+            Contact Me
+          </button>
+          <button class="btn btn-secondary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+            <span class="btn-icon">📂</span>
+            View Projects
+          </button>
+        </div>
+
+        <p class="hero-contact">
+          Email: <span>kiran32386@gmail.com</span> · Phone: <span>+91 99525 16225</span>
+        </p>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-inner">
+            <div class="badge-role">
+              <span class="badge-dot"></span>
+              Final-year IT · Actively looking
+            </div>
+            <h2>Kiran M</h2>
+            <p>
+              Web Development · Data Analytics · Machine Learning · Power BI
+            </p>
+            <div class="hero-meta">
+              <div class="meta-item">
+                <div class="meta-label">Degree</div>
+                <div class="meta-value">B.Tech IT &amp; Engg.</div>
+              </div>
+              <div class="meta-item">
+                <div class="meta-label">CGPA</div>
+                <div class="meta-value">7.3 / 10</div>
+              </div>
+            </div>
+            <div class="hero-pill-row">
+              <div class="hero-pill">Python</div>
+              <div class="hero-pill">HTML · CSS · JS</div>
+              <div class="hero-pill">Power BI + DAX</div>
+              <div class="hero-pill">MySQL</div>
+            </div>
+            <div class="hero-footer">
+              <span>📊 Data Visualization Intern – Infosys</span>
+              <span>🌐 Web Dev Intern – Codsoft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="section-header">
+        <div class="section-title">About</div>
+        <div class="section-subtitle">
+          A quick overview of who I am, what I’ve done, and what I’m looking for next.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <p style="font-size:0.9rem; color:#cbd5f5; margin-bottom:0.75rem;">
+            I’m a final-year Information Technology student at
+            <strong>Velalar College of Engineering and Technology</strong>, graduating in 2026.
+            My strong areas are <strong>web development</strong>, <strong>data visualization</strong>, and
+            <strong>basic machine learning</strong>, backed by internships and academic projects.
+          </p>
+          <p style="font-size:0.9rem; color:#cbd5f5; margin-bottom:0.75rem;">
+            During my internships, I have built responsive web pages using HTML, CSS, and JavaScript, and
+            created interactive dashboards with Power BI using DAX for data modeling and analytics. I enjoy
+            working on projects where I can combine <strong>logic, design, and data</strong> to create
+            something useful.
+          </p>
+          <p style="font-size:0.9rem; color:#cbd5f5;">
+            I’m looking for opportunities where I can contribute as a
+            <strong>Software Developer</strong>, <strong>Web Developer</strong>, or
+            <strong>Data Analyst</strong>—learn from real-world problems, and grow with a team that values
+            curiosity, ownership, and learning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="section-header">
+        <div class="section-title">Skills</div>
+        <div class="section-subtitle">
+          Languages, tools, and technologies I have worked with so far.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner skills-wrap">
+          <div>
+            <div class="skill-group-title">Core Technical</div>
+            <div class="skill-chips">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">Java (Basics)</span>
+              <span class="skill-chip">HTML</span>
+              <span class="skill-chip">CSS</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">MySQL</span>
+              <span class="skill-chip">Power BI</span>
+              <span class="skill-chip">DAX</span>
+            </div>
+
+            <div class="skill-group-title" style="margin-top:0.85rem;">Tools & Productivity</div>
+            <div class="skill-chips">
+              <span class="skill-chip">Microsoft Excel</span>
+              <span class="skill-chip">Microsoft Word</span>
+              <span class="skill-chip">PowerPoint</span>
+              <span class="skill-chip">Canva</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="skill-group-title">Soft Skills & Strengths</div>
+            <div class="skill-chips">
+              <span class="skill-chip">Communication</span>
+              <span class="skill-chip">Teamwork</span>
+              <span class="skill-chip">Leadership (Rotaract)</span>
+              <span class="skill-chip">Problem-Solving</span>
+              <span class="skill-chip">Presentation Skills</span>
+            </div>
+            <p class="skill-note">
+              I’ve applied these skills in internships, hackathons, paper presentations, and community
+              outreach activities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="section-header">
+        <div class="section-title">Experience</div>
+        <div class="section-subtitle">
+          Internships and roles where I applied my skills in real-world scenarios.
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <!-- Codsoft -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-kicker">Internship</div>
+            <div class="card-title">Web Development Intern · Codsoft</div>
+            <div class="card-meta-line">Jun – Jul 2024 · Remote</div>
+            <div class="card-body">
+              <ul>
+                <li>Developed a calculator, personal portfolio, and landing page using HTML, CSS, and JavaScript.</li>
+                <li>Focused on building responsive and user-friendly layouts suitable for different screen sizes.</li>
+                <li>Improved understanding of frontend structure, reusable components, and clean UI practices.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Infosys -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-kicker">Internship</div>
+            <div class="card-title">Data Visualization Intern · Infosys</div>
+            <div class="card-meta-line">Oct – Dec 2024 · Virtual</div>
+            <div class="card-body">
+              <ul>
+                <li>Created interactive dashboards using Power BI based on real-world style datasets.</li>
+                <li>Applied DAX for calculated columns, measures, and KPI creation to support business insights.</li>
+                <li>Worked on transforming raw data into visually clear and decision-friendly reports.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div style="margin-top:1.4rem;">
+        <div class="section-header" style="margin-bottom:0.8rem;">
+          <div class="section-title" style="font-size:1rem;">Education</div>
+        </div>
+
+        <div class="card">
+          <div class="card-inner timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">
+                B.Tech – Information Technology &amp; Engineering
+              </div>
+              <div class="timeline-meta">
+                Velalar College of Engineering and Technology · 2022 – 2026 · CGPA: 7.3 / 10
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">Higher Secondary (Class XII)</div>
+              <div class="timeline-meta">State Board · 2022 · 65%</div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-title">Secondary School (Class X)</div>
+              <div class="timeline-meta">State Board · 2020 · 55%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="section-header">
+        <div class="section-title">Projects</div>
+        <div class="section-subtitle">
+          A glimpse of what I’ve built in Python, automation, ML, and data analytics.
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <!-- OTP Verification -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-kicker">Python · Security</div>
+            <div class="card-title">OTP Verification System</div>
+            <div class="card-meta-line">Python · User Authentication</div>
+            <div class="card-body">
+              <p>
+                Implemented OTP generation, sending, and verification logic to simulate secure user
+                authentication.
+              </p>
+              <ul>
+                <li>Used Python to generate random, time-bound OTP codes.</li>
+                <li>Designed a simple flow for user input and validation.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Automated AURGO -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-kicker">IoT &amp; Automation</div>
+            <div class="card-title">Automated AURGO – Watering Solution</div>
+            <div class="card-meta-line">Sensors · Real-time Weather Data</div>
+            <div class="card-body">
+              <p>
+                Built a self-operating plant watering system that optimizes water usage based on soil and
+                weather conditions.
+              </p>
+              <ul>
+                <li>Designed for ease of use and minimal human intervention.</li>
+                <li>Focused on water conservation and reliability.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plant Disease Prediction -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-kicker">Machine Learning</div>
+            <div class="card-title">Plant Disease Prediction</div>
+            <div class="card-meta-line">Image-based Classification</div>
+            <div class="card-body">
+              <p>
+                Applied machine learning techniques to detect plant diseases from images and help farmers take
+                early action.
+              </p>
+              <ul>
+                <li>Worked with image data and preprocessing techniques.</li>
+                <li>Explored classification models to distinguish healthy vs. diseased leaves.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Power BI Dashboard -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-kicker">Data Visualization</div>
+            <div class="card-title">Power BI Dashboard with DAX</div>
+            <div class="card-meta-line">KPIs · YoY Growth · Regions</div>
+            <div class="card-body">
+              <p>
+                Developed a business analytics dashboard that highlighted key metrics and performance trends.
+              </p>
+              <ul>
+                <li>Created KPIs like YoY growth, profit margin, and regional breakdowns.</li>
+                <li>Used DAX for measures and calculated fields to support decision making.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements">
+      <div class="section-header">
+        <div class="section-title">Achievements & Activities</div>
+        <div class="section-subtitle">
+          Recognitions, events, and responsibilities that helped me grow beyond academics.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="cols-2">
+            <div>
+              <strong>Achievements</strong>
+              <ul style="list-style:none; margin-top:0.35rem;">
+                <li style="padding-left:0.9rem; position:relative; margin-bottom:0.25rem;">
+                  <span style="position:absolute; left:0; color:var(--accent);">•</span>
+                  Completed 2-day online placement training program by IIT Bombay.
+                </li>
+                <li style="padding-left:0.9rem; position:relative; margin-bottom:0.25rem;">
+                  <span style="position:absolute; left:0; color:var(--accent);">•</span>
+                  Attended 1-day workshop on IoT and Raspberry Pi.
+                </li>
+                <li style="padding-left:0.9rem; position:relative; margin-bottom:0.25rem;">
+                  <span style="position:absolute; left:0; color:var(--accent);">•</span>
+                  Smart India Hackathon – qualified at college level (Team Terracrest).
+                </li>
+                <li style="padding-left:0.9rem; position:relative; margin-bottom:0.25rem;">
+                  <span style="position:absolute; left:0; color:var(--accent);">•</span>
+                  Runner-up – AIC Startup Ideas Ideathon.
+                </li>
+                <li style="padding-left:0.9rem; position:relative; margin-bottom:0.25rem;">
+                  <span style="position:absolute; left:0; color:var(--accent);">•</span>
+                  2nd Prize – Techno Pitch Paper Presentation.
+                </li>
+                <li style="padding-left:0.9rem; position:relative; margin-bottom:0.25rem;">
+                  <span style="position:absolute; left:0; color:var(--accent);">•</span>
+                  Awarded “Mr. Exclamatory” at Rotaract District Conference for top quiz score.
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <strong>Leadership & Community</strong>
+              <ul style="list-style:none; margin-top:0.35rem;">
+                <li style="padding-left:0.9rem; position:relative; margin-bottom:0.25rem;">
+                  <span style="position:absolute; left:0; color:var(--accent);">•</span>
+                  Professional Service Director – Rotaract Club VCET (2024–25); organized community and
+                  development events.
+                </li>
+                <li style="padding-left:0.9rem; position:relative; margin-bottom:0.25rem;">
+                  <span style="position:absolute; left:0; color:var(--accent);">•</span>
+                  Conducted digital literacy sessions (MS Word, Excel, PowerPoint) for school students.
+                </li>
+                <li style="padding-left:0.9rem; position:relative; margin-bottom:0.25rem;">
+                  <span style="position:absolute; left:0; color:var(--accent);">•</span>
+                  Volunteered in blood donation drives and environmental campaigns.
+                </li>
+                <li style="padding-left:0.9rem; position:relative; margin-bottom:0.25rem;">
+                  <span style="position:absolute; left:0; color:var(--accent);">•</span>
+                  Personal interests: sci-fi novels, trekking, traveling — reflecting curiosity and adaptability.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-header">
+        <div class="section-title">Contact</div>
+        <div class="section-subtitle">
+          Let’s connect for internships, full-time roles, or collaborations.
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <div>
+          <h3 class="contact-heading">Let’s work together</h3>
+          <p class="contact-text">
+            I’m actively looking for opportunities in <strong>software development</strong>,
+            <strong>web development</strong>, and <strong>data analytics</strong>. If my profile matches
+            what you’re looking for, I’d be happy to connect.
+          </p>
+          <div class="contact-pill-row">
+            <span class="contact-pill">Open to relocation</span>
+            <span class="contact-pill">Looking for 2025–26 roles</span>
+            <span class="contact-pill">Available for virtual interviews</span>
+          </div>
+        </div>
+
+        <div class="contact-details">
+          <div>
+            <span class="contact-label">Email</span>
+            <a href="mailto:kiran32386@gmail.com">kiran32386@gmail.com</a>
+          </div>
+          <div>
+            <span class="contact-label">Phone</span>
+            <a href="tel:+919952516225">+91 99525 16225</a>
+          </div>
+          <div>
+            <span class="contact-label">Location</span>
+            <span>Erode, Tamil Nadu, India</span>
+          </div>
+          <!-- Optional placeholders for future links -->
+          <!--
+          <div>
+            <span class="contact-label">LinkedIn</span>
+            <a href="#" target="_blank" rel="noreferrer">linkedin.com/in/...</a>
+          </div>
+          <div>
+            <span class="contact-label">GitHub</span>
+            <a href="#" target="_blank" rel="noreferrer">github.com/...</a>
+          </div>
+          -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page">
+    <span>© <span id="year"></span> · Designed &amp; built by Kiran M</span>
+    <span>Built with HTML, CSS &amp; a bit of JavaScript</span>
+  </footer>
+
+  <script>
+    // Dynamic year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById("navToggle");
+    const navMobile = document.getElementById("navLinksMobile");
+
+    navToggle.addEventListener("click", () => {
+      navMobile.classList.toggle("open");
+    });
+
+    // Close mobile menu on link click
+    navMobile.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMobile.classList.remove("open");
+      });
+    });
+  </script>
+</body>
+</html>
