@@ -5,6 +5,11 @@
   <title>Kiran M | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfolio of Kiran M - Recent B.Tech IT graduate skilled in Web Development, Data Analytics, Power BI, and Machine Learning." />
+  <meta property="og:title" content="Kiran M | Portfolio" />
+  <meta property="og:description" content="Recent B.Tech IT graduate — Web Development, Data Analytics, Power BI, and Machine Learning." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230a0d13'/%3E%3Ctext x='32' y='42' font-family='sans-serif' font-size='26' font-weight='700' fill='%23e8a33d' text-anchor='middle'%3EKM%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -37,6 +42,22 @@
 
     html {
       scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      * {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 6px;
     }
 
     body {
@@ -432,6 +453,23 @@
       gap: 0.2rem;
     }
 
+    .nav-links a.active {
+      color: var(--text);
+      background: rgba(232, 163, 61, 0.12);
+      border: 1px solid rgba(232, 163, 61, 0.3);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* Sections */
 
     section {
@@ -490,6 +528,30 @@
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(232, 163, 61, 0.45);
+      box-shadow: 0 24px 55px rgba(3, 5, 9, 0.85);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--accent), var(--accent-2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover::after {
+      transform: scaleX(1);
     }
 
     .card::before {
@@ -587,6 +649,24 @@
       margin-top: 0.7rem;
       font-size: 0.78rem;
       color: var(--muted);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 6px;
+      background: rgba(232, 163, 61, 0.08);
+      border: 1px solid rgba(232, 163, 61, 0.25);
+      color: var(--accent);
+      letter-spacing: 0.02em;
     }
 
     /* Timeline */
@@ -889,7 +969,7 @@
     </section>
 
     <!-- About -->
-    <section id="about">
+    <section id="about" class="reveal">
       <div class="section-header">
         <div class="section-title">About</div>
         <div class="section-subtitle">
@@ -922,7 +1002,7 @@
     </section>
 
     <!-- Skills -->
-    <section id="skills">
+    <section id="skills" class="reveal">
       <div class="section-header">
         <div class="section-title">Skills</div>
         <div class="section-subtitle">
@@ -974,7 +1054,7 @@
     </section>
 
     <!-- Experience -->
-    <section id="experience">
+    <section id="experience" class="reveal">
       <div class="section-header">
         <div class="section-title">Experience</div>
         <div class="section-subtitle">
@@ -1065,7 +1145,7 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects">
+    <section id="projects" class="reveal">
       <div class="section-header">
         <div class="section-title">Projects</div>
         <div class="section-subtitle">
@@ -1089,6 +1169,10 @@
                 <li>Used Python to generate random, time-bound OTP codes.</li>
                 <li>Designed a simple flow for user input and validation.</li>
               </ul>
+              <div class="tag-row">
+                <span class="tag">Python</span>
+                <span class="tag">Auth</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1108,6 +1192,11 @@
                 <li>Designed for ease of use and minimal human intervention.</li>
                 <li>Focused on water conservation and reliability.</li>
               </ul>
+              <div class="tag-row">
+                <span class="tag">IoT</span>
+                <span class="tag">Sensors</span>
+                <span class="tag">Automation</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1127,6 +1216,11 @@
                 <li>Combined ResNet-50 feature extraction with an SVM classifier.</li>
                 <li>Achieved 98% classification accuracy on thermal signature data.</li>
               </ul>
+              <div class="tag-row">
+                <span class="tag">ResNet-50</span>
+                <span class="tag">SVM</span>
+                <span class="tag">Computer Vision</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1146,6 +1240,10 @@
                 <li>Worked with image data and preprocessing techniques.</li>
                 <li>Explored classification models to distinguish healthy vs. diseased leaves.</li>
               </ul>
+              <div class="tag-row">
+                <span class="tag">Python</span>
+                <span class="tag">Image Classification</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1164,6 +1262,10 @@
                 <li>Created KPIs like YoY growth, profit margin, and regional breakdowns.</li>
                 <li>Used DAX for measures and calculated fields to support decision making.</li>
               </ul>
+              <div class="tag-row">
+                <span class="tag">Power BI</span>
+                <span class="tag">DAX</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1171,7 +1273,7 @@
     </section>
 
     <!-- Achievements -->
-    <section id="achievements">
+    <section id="achievements" class="reveal">
       <div class="section-header">
         <div class="section-title">Achievements & Activities</div>
         <div class="section-subtitle">
@@ -1240,7 +1342,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact">
+    <section id="contact" class="reveal">
       <div class="section-header">
         <div class="section-title">Contact</div>
         <div class="section-subtitle">
@@ -1301,6 +1403,50 @@
         navMobile.classList.remove("open");
       });
     });
+
+    // Scroll-reveal for sections
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealEls = document.querySelectorAll(".reveal");
+
+    if (prefersReducedMotion) {
+      revealEls.forEach((el) => el.classList.add("in-view"));
+    } else if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+      );
+      revealEls.forEach((el) => revealObserver.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add("in-view"));
+    }
+
+    // Active nav-link tracking
+    const navAnchors = document.querySelectorAll(".nav-links a[href^='#']");
+    const sectionsWithIds = [...document.querySelectorAll("section[id]")];
+
+    if ("IntersectionObserver" in window && sectionsWithIds.length) {
+      const navObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute("id");
+              navAnchors.forEach((a) => {
+                a.classList.toggle("active", a.getAttribute("href") === `#${id}`);
+              });
+            }
+          });
+        },
+        { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+      );
+      sectionsWithIds.forEach((sec) => navObserver.observe(sec));
+    }
   </script>
 </body>
 </html>
