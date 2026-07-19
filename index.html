@@ -4,22 +4,29 @@
   <meta charset="UTF-8" />
   <title>Kiran M | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Kiran M - Final-year IT student skilled in Web Development, Data Analytics, Power BI, and Machine Learning." />
+  <meta name="description" content="Portfolio of Kiran M - Recent B.Tech IT graduate skilled in Web Development, Data Analytics, Power BI, and Machine Learning." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #050816;
-      --bg-alt: #0f172a;
-      --card: #020617;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.1);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --border: #1f2937;
+      --bg: #0a0d13;
+      --bg-alt: #12161f;
+      --card: #0a0d13;
+      --accent: #e8a33d;
+      --accent-2: #2dd4bf;
+      --accent-soft: rgba(232, 163, 61, 0.1);
+      --text: #e8eaef;
+      --muted: #8b93a1;
+      --border: #212734;
       --radius-lg: 18px;
       --radius-pill: 999px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
-      --shadow-chip: 0 8px 20px rgba(15, 23, 42, 0.8);
+      --shadow-soft: 0 18px 45px rgba(3, 5, 9, 0.75);
+      --shadow-chip: 0 8px 20px rgba(3, 5, 9, 0.8);
       --transition-fast: 0.2s ease;
+      --font-display: "Space Grotesk", system-ui, sans-serif;
+      --font-body: "Inter", system-ui, -apple-system, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
     }
 
     * {
@@ -33,11 +40,27 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(rgba(232, 163, 61, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232, 163, 61, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at top, #161b26 0, #05070b 55%, #000 100%);
+      background-size: 44px 44px, 44px 44px, 100% 100%;
+      background-attachment: fixed;
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .hero-title, .card-title, .contact-heading, .nav-title h1, .hero-card h2 {
+      font-family: var(--font-display);
+    }
+
+    .hero-kicker, .card-kicker, .skill-group-title, .meta-label,
+    .contact-label, .card-meta-line, .timeline-meta, .hero-contact,
+    .cgpa-readout, .nav-title span {
+      font-family: var(--font-mono);
     }
 
     a {
@@ -79,13 +102,13 @@
       width: 40px;
       height: 40px;
       border-radius: 999px;
-      background: radial-gradient(circle at 20% 0, #38bdf8, #4f46e5);
+      background: radial-gradient(circle at 20% 0, #e8a33d, #0d9488);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
       color: #e5e7eb;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+      box-shadow: 0 0 25px rgba(232, 163, 61, 0.5);
       font-size: 1.05rem;
     }
 
@@ -136,7 +159,7 @@
       align-items: center;
       gap: 0.3rem;
       font-size: 0.83rem;
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), rgba(15, 23, 42, 0.9));
+      background: radial-gradient(circle at top left, rgba(232, 163, 61, 0.25), rgba(15, 23, 42, 0.9));
       box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9);
     }
 
@@ -192,7 +215,7 @@
     }
 
     .hero-title span {
-      background: linear-gradient(to right, #38bdf8, #a855f7);
+      background: linear-gradient(to right, #e8a33d, #2dd4bf);
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -228,8 +251,8 @@
       width: 7px;
       height: 7px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #38bdf8, #22c55e);
-      box-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+      background: radial-gradient(circle at 30% 0, #e8a33d, #22c55e);
+      box-shadow: 0 0 12px rgba(232, 163, 61, 0.8);
     }
 
     .hero-actions {
@@ -254,14 +277,14 @@
     }
 
     .btn-primary {
-      background: radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.32), rgba(37, 99, 235, 0.9));
-      border-color: rgba(129, 140, 248, 0.9);
-      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.5);
+      background: radial-gradient(circle at 0 0, rgba(232, 163, 61, 0.32), rgba(13, 148, 136, 0.9));
+      border-color: rgba(45, 212, 191, 0.9);
+      box-shadow: 0 20px 40px rgba(13, 148, 136, 0.5);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 26px 55px rgba(37, 99, 235, 0.7);
+      box-shadow: 0 26px 55px rgba(13, 148, 136, 0.7);
     }
 
     .btn-secondary {
@@ -269,8 +292,8 @@
     }
 
     .btn-secondary:hover {
-      background: rgba(30, 64, 175, 0.7);
-      border-color: rgba(129, 140, 248, 0.9);
+      background: rgba(15, 118, 110, 0.7);
+      border-color: rgba(45, 212, 191, 0.9);
     }
 
     .btn-icon {
@@ -294,10 +317,10 @@
     }
 
     .hero-card {
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.26), rgba(15, 23, 42, 0.96));
+      background: radial-gradient(circle at top, rgba(232, 163, 61, 0.26), rgba(15, 23, 42, 0.96));
       border-radius: 26px;
       padding: 1.1rem 1.2rem;
-      border: 1px solid rgba(37, 99, 235, 0.6);
+      border: 1px solid rgba(13, 148, 136, 0.6);
       box-shadow: var(--shadow-soft);
       max-width: 320px;
       width: 100%;
@@ -326,7 +349,7 @@
       padding: 0.3rem 0.75rem;
       border-radius: var(--radius-pill);
       background: rgba(15, 23, 42, 0.92);
-      border: 1px solid rgba(96, 165, 250, 0.7);
+      border: 1px solid rgba(251, 191, 36, 0.7);
       font-size: 0.78rem;
       margin-bottom: 0.7rem;
     }
@@ -398,7 +421,7 @@
       align-items: center;
       font-size: 0.72rem;
       color: var(--muted);
-      border-top: 1px dashed rgba(30, 64, 175, 0.7);
+      border-top: 1px dashed rgba(15, 118, 110, 0.7);
       padding-top: 0.55rem;
       margin-top: 0.4rem;
     }
@@ -435,7 +458,7 @@
       width: 5px;
       height: 20px;
       border-radius: 999px;
-      background: linear-gradient(to bottom, #38bdf8, #a855f7);
+      background: linear-gradient(to bottom, #e8a33d, #2dd4bf);
     }
 
     .section-subtitle {
@@ -449,8 +472,18 @@
       gap: 1rem;
     }
 
+    .card-grid.cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (max-width: 900px) {
+      .card-grid.cols-3 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
     .card {
-      background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.4), rgba(15, 23, 42, 0.96));
+      background: radial-gradient(circle at top left, rgba(15, 118, 110, 0.4), rgba(15, 23, 42, 0.96));
       border-radius: var(--radius-lg);
       padding: 1rem;
       border: 1px solid rgba(31, 41, 55, 0.9);
@@ -463,7 +496,7 @@
       content: "";
       position: absolute;
       inset: -2px;
-      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.18), transparent 55%);
+      background: radial-gradient(circle at top right, rgba(232, 163, 61, 0.18), transparent 55%);
       opacity: 0.9;
       pointer-events: none;
     }
@@ -494,7 +527,7 @@
 
     .card-body {
       font-size: 0.85rem;
-      color: #cbd5f5;
+      color: #ced3dd;
     }
 
     .card-body ul {
@@ -575,8 +608,8 @@
       width: 9px;
       height: 9px;
       border-radius: 999px;
-      background: #38bdf8;
-      box-shadow: 0 0 16px rgba(56, 189, 248, 0.9);
+      background: #e8a33d;
+      box-shadow: 0 0 16px rgba(232, 163, 61, 0.9);
     }
 
     .timeline-title {
@@ -606,10 +639,10 @@
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 1rem;
-      background: linear-gradient(to right, rgba(15, 23, 42, 0.98), rgba(30, 64, 175, 0.88));
+      background: linear-gradient(to right, rgba(15, 23, 42, 0.98), rgba(15, 118, 110, 0.88));
       border-radius: 22px;
       padding: 1.1rem 1.15rem;
-      border: 1px solid rgba(56, 189, 248, 0.4);
+      border: 1px solid rgba(232, 163, 61, 0.4);
       box-shadow: var(--shadow-soft);
     }
 
@@ -620,7 +653,7 @@
 
     .contact-text {
       font-size: 0.85rem;
-      color: #cbd5f5;
+      color: #ced3dd;
       margin-bottom: 0.65rem;
     }
 
@@ -777,15 +810,16 @@
     <!-- Hero -->
     <section class="hero">
       <div>
-        <div class="hero-kicker">Final-year B.Tech · Information Technology</div>
+        <div class="hero-kicker">B.Tech Graduate · Information Technology</div>
         <h2 class="hero-title">
           Building <span>web, Data </span> solutions that solve real problems.
         </h2>
         <p class="hero-subtitle">
-          I’m a final-year IT student with hands-on experience in
+          I’m a recent IT graduate with hands-on experience in
           <strong>web development</strong>, <strong>data analytics with Power BI</strong>, and
-          <strong>machine learning</strong>. I enjoy turning ideas into practical applications — from
-          dashboards and automation to predictive models.
+          <strong>applied machine learning</strong>. Most recently I built an AI chatbot that automated
+          80% of customer queries — I enjoy turning ideas into practical applications, from dashboards
+          and automation to predictive models.
         </p>
 
         <div class="hero-tags">
@@ -822,7 +856,7 @@
           <div class="hero-card-inner">
             <div class="badge-role">
               <span class="badge-dot"></span>
-              Final-year IT · Actively looking
+              B.Tech IT Graduate · Actively looking
             </div>
             <h2>Kiran M</h2>
             <p>
@@ -835,18 +869,19 @@
               </div>
               <div class="meta-item">
                 <div class="meta-label">CGPA</div>
-                <div class="meta-value">7.3 / 10</div>
+                <div class="meta-value">7.55 / 10</div>
               </div>
             </div>
             <div class="hero-pill-row">
               <div class="hero-pill">Python</div>
               <div class="hero-pill">HTML · CSS · JS</div>
               <div class="hero-pill">Power BI + DAX</div>
-              <div class="hero-pill">MySQL</div>
+              <div class="hero-pill">MySQL (Basics)</div>
+              <div class="hero-pill">AI / Automation</div>
             </div>
             <div class="hero-footer">
-              <span>📊 Data Visualization Intern – Infosys</span>
-              <span>🌐 Web Dev Intern – Codsoft</span>
+              <span>🤖 AI Dev Intern – HumbleTree</span>
+              <span>📊 Data Viz Intern – Infosys</span>
             </div>
           </div>
         </div>
@@ -863,19 +898,20 @@
       </div>
       <div class="card">
         <div class="card-inner">
-          <p style="font-size:0.9rem; color:#cbd5f5; margin-bottom:0.75rem;">
-            I’m a final-year Information Technology student at
-            <strong>Velalar College of Engineering and Technology</strong>, graduating in 2026.
+          <p style="font-size:0.9rem; color:#ced3dd; margin-bottom:0.75rem;">
+            I’m a recent Information Technology graduate from
+            <strong>Velalar College of Engineering and Technology</strong>, class of 2026.
             My strong areas are <strong>web development</strong>, <strong>data visualization</strong>, and
             <strong>basic machine learning</strong>, backed by internships and academic projects.
           </p>
-          <p style="font-size:0.9rem; color:#cbd5f5; margin-bottom:0.75rem;">
-            During my internships, I have built responsive web pages using HTML, CSS, and JavaScript, and
-            created interactive dashboards with Power BI using DAX for data modeling and analytics. I enjoy
+          <p style="font-size:0.9rem; color:#ced3dd; margin-bottom:0.75rem;">
+            Across my internships I’ve built responsive web pages with HTML, CSS, and JavaScript, created
+            interactive Power BI dashboards using DAX for data modeling, and developed an AI-powered Shopify
+            chatbot that automated 80% of customer queries and cut response time by 60%. I enjoy
             working on projects where I can combine <strong>logic, design, and data</strong> to create
             something useful.
           </p>
-          <p style="font-size:0.9rem; color:#cbd5f5;">
+          <p style="font-size:0.9rem; color:#ced3dd;">
             I’m looking for opportunities where I can contribute as a
             <strong>Software Developer</strong>, <strong>Web Developer</strong>,
             <strong>Data Analyst</strong>, or <strong>Business Analyst</strong>—learn from real-world problems,
@@ -904,9 +940,10 @@
               <span class="skill-chip">HTML</span>
               <span class="skill-chip">CSS</span>
               <span class="skill-chip">JavaScript</span>
-              <span class="skill-chip">MySQL</span>
+              <span class="skill-chip">MySQL (Basics)</span>
               <span class="skill-chip">Power BI</span>
               <span class="skill-chip">DAX</span>
+              <span class="skill-chip">AI Chatbot Development</span>
             </div>
 
             <div class="skill-group-title" style="margin-top:0.85rem;">Tools & Productivity</div>
@@ -945,18 +982,18 @@
         </div>
       </div>
 
-      <div class="card-grid">
-        <!-- Codsoft -->
+      <div class="card-grid cols-3">
+        <!-- HumbleTree Cloud -->
         <div class="card">
           <div class="card-inner">
-            <div class="card-kicker">Internship</div>
-            <div class="card-title">Web Development Intern · Codsoft</div>
-            <div class="card-meta-line">Jun – Jul 2024 · Remote</div>
+            <div class="card-kicker">Internship · Most Recent</div>
+            <div class="card-title">AI Development Intern · HumbleTree Cloud</div>
+            <div class="card-meta-line">Jan – Mar 2025 · Remote</div>
             <div class="card-body">
               <ul>
-                <li>Developed a calculator, personal portfolio, and landing page using HTML, CSS, and JavaScript.</li>
-                <li>Focused on building responsive and user-friendly layouts suitable for different screen sizes.</li>
-                <li>Improved understanding of frontend structure, reusable components, and clean UI practices.</li>
+                <li>Built an AI-powered Shopify chatbot that automated 80% of customer queries, cutting response time by 60%.</li>
+                <li>Took part in business and product strategy discussions to translate customer needs into solutions.</li>
+                <li>Contributed to marketing and promotion activities for AI-based products.</li>
               </ul>
             </div>
           </div>
@@ -977,6 +1014,22 @@
             </div>
           </div>
         </div>
+
+        <!-- Codsoft -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-kicker">Internship</div>
+            <div class="card-title">Web Development Intern · Codsoft</div>
+            <div class="card-meta-line">Jun – Jul 2024 · Remote</div>
+            <div class="card-body">
+              <ul>
+                <li>Developed a calculator, personal portfolio, and landing page using HTML, CSS, and JavaScript.</li>
+                <li>Focused on building responsive and user-friendly layouts suitable for different screen sizes.</li>
+                <li>Improved understanding of frontend structure, reusable components, and clean UI practices.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Education -->
@@ -993,7 +1046,7 @@
                 B.Tech – Information Technology &amp; Engineering
               </div>
               <div class="timeline-meta">
-                Velalar College of Engineering and Technology · 2022 – 2026 · CGPA: 7.45 / 10
+                Velalar College of Engineering and Technology · 2022 – 2026 · CGPA: 7.55 / 10
               </div>
             </div>
             <div class="timeline-item">
@@ -1020,7 +1073,7 @@
         </div>
       </div>
 
-      <div class="card-grid">
+      <div class="card-grid cols-3">
         <!-- OTP Verification -->
         <div class="card">
           <div class="card-inner">
@@ -1054,6 +1107,25 @@
               <ul>
                 <li>Designed for ease of use and minimal human intervention.</li>
                 <li>Focused on water conservation and reliability.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Thermal Stress Classification -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-kicker">Machine Learning · 98% Accuracy</div>
+            <div class="card-title">Stress Classification via Thermal Signature Analysis</div>
+            <div class="card-meta-line">ResNet-50 · SVM · Precision Agriculture</div>
+            <div class="card-body">
+              <p>
+                Developed an AI-driven crop stress detection system using thermal image analysis to classify
+                plant stress conditions for precision agriculture.
+              </p>
+              <ul>
+                <li>Combined ResNet-50 feature extraction with an SVM classifier.</li>
+                <li>Achieved 98% classification accuracy on thermal signature data.</li>
               </ul>
             </div>
           </div>
@@ -1187,7 +1259,7 @@
           <div class="contact-pill-row">
             <span class="contact-pill">Open to relocation</span>
             <span class="contact-pill">Looking for 2026 roles</span>
-            <span class="contact-pill">Available for virtual & F2F interviews</span>
+            <span class="contact-pill">Available for virtual & in-person interviews</span>
           </div>
         </div>
 
@@ -1204,17 +1276,6 @@
             <span class="contact-label">Location</span>
             <span>Erode, Tamil Nadu, India</span>
           </div>
-          <!-- Optional placeholders for future links -->
-          <!--
-          <div>
-            <span class="contact-label">LinkedIn</span>
-            <a href="#" target="_blank" rel="noreferrer">linkedin.com/in/...</a>
-          </div>
-          <div>
-            <span class="contact-label">GitHub</span>
-            <a href="#" target="_blank" rel="noreferrer">github.com/...</a>
-          </div>
-          -->
         </div>
       </div>
     </section>
@@ -1226,10 +1287,8 @@
   </footer>
 
   <script>
-    // Dynamic year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Mobile nav toggle
     const navToggle = document.getElementById("navToggle");
     const navMobile = document.getElementById("navLinksMobile");
 
@@ -1237,7 +1296,6 @@
       navMobile.classList.toggle("open");
     });
 
-    // Close mobile menu on link click
     navMobile.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         navMobile.classList.remove("open");
