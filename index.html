@@ -246,6 +246,10 @@
       font-size: 0.9rem;
     }
 
+    #navLinksMobile {
+      display: none;
+    }
+
     .nav-links a {
       padding: 0.35rem 0.6rem;
       border-radius: var(--radius-pill);
@@ -946,6 +950,10 @@
     }
 
     @media (max-width: 720px) {
+      #navLinksMobile {
+        display: flex;
+      }
+
       .nav-links {
         position: absolute;
         top: 100%;
